@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Program Course
+{% endblock title %}
+
+{% block body %}
+    <div class="main">
+    <table align=left>
+        <tr>
+            <td><a href="{% url 'apps.my_site:allCourses' %}">Все</a></td>
+            <td><strong>Программирование</strong></td>
+            <td><a href="{% url 'apps.my_site:linCourse' %}">Лингвистика</a></td>
+            <td><a href="{% url 'apps.my_site:disCourse' %}">Дизайн</a></td>
+        </tr>
+    </table>
+    <table width=100%>
+        <tr>
+            <td>
+                <div class="curses" style="background:#1D1B7C;">
+                    <h1 style="vertical-align:middle; padding: 100px;"> Python </h1>
+                    <h4 class="particular-item">16 занятий</h4>
+                </div>
+
+                <div class="footer">
+                    <h6 align=right><em>©Артамоновой Анастасии ПИН-34</em></h6>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </div>
+{% endblock body %}

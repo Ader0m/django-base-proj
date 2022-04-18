@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} WelcomePage {% endblock title %}
+
+{% block body %}
+
+    <div class="main">
+        <h1>Выберите направление</h1>
+        <ul>
+            <li><a href="{% url 'apps.my_site:progCourse' %}">Программирование</a></li>
+            <li><a href="{% url 'apps.my_site:linCourse' %}">Лингвистика</a></li>
+            <li><a href="{% url 'apps.my_site:disCourse' %}">Дизайн</a></li>
+        </ul>
+        <img align=center src="/staticfiles/img/draw1.jpg" width=100%/>
+    </div>
+
+{% endblock body %}
+

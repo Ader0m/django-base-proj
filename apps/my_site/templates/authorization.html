@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Authorization
+{% endblock title %}
+
+{% block body %}
+    <div class="main">
+        <div class="form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <h1>Вход</h1>
+            <div class="input-form">
+                <input type="text" placeholder="Логин">
+            </div>
+            <div class="input-form">
+                <input type="password" placeholder="Пароль">
+            </div>
+            <div class="input-form">
+                <input type="submit" value="Войти">
+            </div>
+            <a href="#" type="foget">Забыли пароль?</a>
+            <a href="{% url 'apps.my_site:registration' %}" type="reg">Регистрация</a>
+        </div>
+    </div>
+{% endblock body %}

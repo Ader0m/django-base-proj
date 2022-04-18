@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from apps.movies.views import MovieList
+from apps.my_site.views import *
 import django.contrib.auth.urls
 
+
 urlpatterns = [
+    path('', include('apps.my_site.urls')),
     path('admin/', admin.site.urls),
-    path('auth/', include(('django.contrib.auth.urls', 'auth'), namespace='auth')),
-    path('authentication/', include('apps.authentication.urls', namespace='authentication')),
-    path('movies/', include('apps.movies.urls', namespace='movies')),
-    path('select2/', include('django_select2.urls')),
-    path('', MovieList.as_view())
+    path('authorization/', include(('django.contrib.auth.urls', 'auth'), namespace='auth')),
+    path('authorization/', include('apps.my_site.urls', namespace='authorization'))
+
 ]

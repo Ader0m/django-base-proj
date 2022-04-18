@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contacts
+{% endblock title %}
+
+{% block body %}
+    <div class="main">
+      COURSE <br>
+      Владелец: Артамонова Анастасия ПИН-34 <br>
+      Телефон: 1234567890 <br>
+      Адрес: г. Москва, ул. Садовая, д. 7 <br>
+    </div>
+
+    <a href="{% url 'apps.my_site:sendForm' %}"> Оставить отзыв </a>
+     <!-- <script src="../js/script.js"></script> -->
+{% endblock body %}

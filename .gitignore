@@ -154,7 +154,7 @@ yarn-error.log
 .idea
 .vscode
 
-static
+staticfiles
 .env
 xmlrunner
 frontend/dist

@@ -1,7 +1,7 @@
 from .base import *
 import os
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = '/staticfiles/'
 
 DATABASES = {
     'default': {

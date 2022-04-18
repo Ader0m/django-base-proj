@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Design Webinar
+{% endblock title %}
+
+{% block body %}
+<div class="main">
+  <table align = left>
+<tr>
+<td><a href="{% url 'apps.my_site:webinar' %}">Все</a></td>
+<td><a href="{% url 'apps.my_site:progWeb' %}">Программирование</a></td>
+<td><a href="{% url 'apps.my_site:linWeb' %}">Лингвистика</a></td>
+<td><strong>Дизайн</strong></td>
+</tr>
+</table>
+<table width = 100%>
+    <tr>
+
+ <td>
+    <img src="https://live-prod.hb.bizmrg.com/269580/conversions/48012f4309e793a8b4de05e086d651c4-api-jpg.jpg?v=1643845806" width=100% alt = "Пробуем себя в разных видах дизайна"/>
+    <h3>Пробуем себя в разных видах дизайна</h3>
+</td>
+
+</tr>
+</table>
+</div>
+{% endblock body %}

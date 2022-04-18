@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Linguistics Course
+{% endblock title %}
+
+{% block body %}
+    <div class="main">
+      <table align = left>
+    <tr>
+    <td><a href="{% url 'apps.my_site:allCourses' %}">Все</a></td>
+    <td><a href="{% url 'apps.my_site:progCourse' %}">Программирование</a></td>
+    <td><strong>Лингвистика</strong></td>
+    <td><a href="{% url 'apps.my_site:disCourse' %}">Дизайн</a></td>
+    </tr>
+    </table>
+    <table width = 100%>
+        <tr>
+    <td >
+        <div class="curses" style="background:#1D1B7C;">
+            <h1 style="vertical-align:middle; padding: 100px;"> Английский язык </h1>
+        <h4 class="particular-item">24 занятия</h4>
+        </div>
+    </td>
+        </tr>
+    </table>
+    </div>
+{% endblock body %}

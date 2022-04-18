@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MoviesConfig(AppConfig):
+class RegistrationConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.movies'
+    name = 'apps.my_site'

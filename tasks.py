@@ -52,3 +52,12 @@ def run(ctx):
     ctx.run('python manage.py makemigrations')
     ctx.run('python manage.py migrate')
     ctx.run('python manage.py runserver 0.0.0.0:8000')
+
+    ctx.run('python manage.py collectstatic --noinput')
+
+    cmd = ('uwsgi --http 0.0.0.0:8000 --master '
+           '--module "django.core.wsgi:get_wsgi_application()" '
+           '--processes 2 '
+           '--offload-threads 4 '
+           '--enable-threads '
+           '--staticfiles-map /staticfiles=/staticfiles')
