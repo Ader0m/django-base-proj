@@ -62,13 +62,11 @@ def register(request):
 
 
 def send_form(request):
-    return render(request, 'sendForm.html')
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
+    return render(request, 'sendForm.html', context={'num_visits': num_visits})
 
 
 def webinar(request):
     return render(request, "webinar.html")
-
-
-
-
-

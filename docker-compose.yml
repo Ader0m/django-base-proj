@@ -1,6 +1,7 @@
 version: "3"
 services:
   db:
+    container_name: DataBase
     image: postgres:11.5
     environment:
       - POSTGRES_PASSWORD=123
@@ -12,11 +13,13 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - "5432:5432"
   web:
+    container_name: Site
     build: .
     environment:
       - DJANGO_SETTINGS_MODULE=settings.dev
+      - PY_AUTORELOAD=true
     volumes:
       - .:/src
     command:
@@ -24,6 +27,15 @@ services:
     links:
       - db
     ports:
-      - 8000:8000
+      - "8000:8000"
+  nginx:
+    container_name: Nginx
+    build:
+      context: nginx/
+      dockerfile: Dockerfile
+    links:
+      - web
+    ports:
+      - "80:80"
 volumes:
   pgdata:

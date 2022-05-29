@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} Send Form {% endblock title %}
+{% block head%}
 
+{% endblock head %}
 {% block body %}
     <div class="main">
+
+        <h2>Dynamic content</h2>
+
+        <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
         <form id="contact-form" class="contact-form" autocomplete="off">
 
             <p> Закажите обратный звонок и наш консультант свяжется с вами </p>
@@ -40,28 +48,7 @@
             </ul>
         </form>
     </div>
-    <!--
-    <script>
-        $("#contact-form").validate({
-            rules: {
-                phone: {
-                    digits: true,
-                    min: 11
-                },
-                name: {
-                    min: 2,
-                }
-            },
-            messages: {
-                phone: {
-                    digits: "Только цифры",
-                    min: "Не является номером телефона"
-                },
-                name: {
-                    min: "Не может содержать меньше 2 символов"
-                }
-            }
-        });
-    </script>
-    -->
+
+    <script src="{% static 'js/telegramForm.js' %}"></script>
+
 {% endblock body %}
